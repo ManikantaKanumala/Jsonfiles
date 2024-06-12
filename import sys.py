@@ -32,6 +32,11 @@ class MainWindow(QMainWindow):
         home_btn.triggered.connect(self.navigate_home)
         navbar.addAction(home_btn)
 
+        facebook_btn = QAction('Facebook',self)
+        facebook_btn.triggered.connect(self.facebook)
+        navbar.addAction(facebook_btn)
+
+
         self.url_bar = QLineEdit()
         self.url_bar.returnPressed.connect(self.navigate_to_url)
         navbar.addWidget(self.url_bar)
@@ -47,6 +52,9 @@ class MainWindow(QMainWindow):
 
     def update_url(self, q):
         self.url_bar.setText(q.toString())
+    
+    def facebook(self):
+        self.browser.setUrl(QUrl('https://facebook.com'))
 
 
 app = QApplication(sys.argv)
