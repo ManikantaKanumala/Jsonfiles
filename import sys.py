@@ -61,3 +61,5 @@ app = QApplication(sys.argv)
 QApplication.setApplicationName('CopyAssignment Browser')
 window = MainWindow()
 app.exec_()
+
+print(window)
